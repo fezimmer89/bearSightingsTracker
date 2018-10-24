@@ -23,7 +23,7 @@ Supported query params, all optional
 Return a single sighting object queried by its ID
         
 
-##Steps to run this project:##
+## Steps to run this project: ##
 
 1. clone project
 2. make sure you have mysql installed

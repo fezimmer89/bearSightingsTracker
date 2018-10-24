@@ -1,8 +1,8 @@
 process.env.NODE_ENV = 'test';
 
-import { Sighting } from "./sighting.entity";
-import { getSightingRepository, saveSighting } from "./sighting.repository";
-const server = require('../../index');
+import { Sighting } from "../api/sightings/sighting.entity";
+import { getSightingRepository, saveSighting } from "../api/sightings/sighting.repository";
+const server = require('../index');
 const faker = require('faker');
 const moment = require('moment');
 const _ = require('lodash');

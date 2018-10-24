@@ -4,11 +4,11 @@ import cors  = require('cors');
 import morgan  = require('morgan');
 import bodyParser  = require('body-parser');
 import api from './api';
-const http = require('http');
+import http = require('http');
 const config = require('./config.json');
 
 let app = express();
-app.server = http.createServer(app);
+let server = http.createServer(app);
 
 app.use(morgan('dev'));
 app.use(cors({
@@ -21,8 +21,8 @@ app.use(bodyParser.json({
   limit : config.bodyLimit
 }));
 
-app.server.listen(process.env.PORT || config.port, () => {
-  console.log(`Started on port ${app.server.address().port}`);
+server.listen(process.env.PORT || config.port, () => {
+  console.log(`Started on port ${server.address().port}`);
 });
 
 module.exports = app;

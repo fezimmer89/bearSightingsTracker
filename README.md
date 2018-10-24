@@ -30,7 +30,7 @@ Return a single sighting object queried by its ID
 3. run command ``` npm install ``` to install dependencies
 4. run ``` npm start ``` to start the server
 
-To the server in development mode and have nodemon watch for changes use 
+To start the server in development mode and have nodemon watch for changes use 
 ``` nodemon npm start ```
 
 To run mocha tests use 

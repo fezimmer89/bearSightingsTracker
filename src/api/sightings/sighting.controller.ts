@@ -33,10 +33,11 @@ export function get(req, res) {
 export function create(req, res) {
   const sighting = new Sighting();
 
-  sighting.bear_type = req.params.bear_type;
-  sighting.notes = req.params.notes;
-  sighting.zip_code = req.params.zip_code;
-  sighting.num_bears = req.params.num_bears;
+  // simple validation
+  sighting.bear_type = req.params.bear_type ? req.params.bear_type.toString() : "";
+  sighting.notes = req.params.notes ? req.params.notes.toString() : "";
+  sighting.zip_code = req.params.zip_code ? req.params.zip_code.toString().substring(0, 5) : "";
+  sighting.num_bears = isNaN(parseFloat(req.params.num_bears)) ? 0 : Number(req.params.num_bears);
   sighting.created_at = moment().toString();
 
   return saveSighting(sighting)

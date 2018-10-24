@@ -5,7 +5,7 @@ import sightings from './sightings';
 export default () => {
 	let api = Router();
 
-	api.use('/sightings', sightings());
+	api.use('/sighting', sightings());
 
 	// expose some API metadata at the root
 	api.get('/', (req, res) => {

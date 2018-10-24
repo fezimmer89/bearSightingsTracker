@@ -35,7 +35,7 @@ describe('Sightings', () => {
         });
   });
 
-  describe('/GET /sightings/:id', () => {
+  describe('/GET /sighting/:id', () => {
     let sightingMock;
     beforeEach((done) => {
       return generateSighting()
@@ -46,7 +46,7 @@ describe('Sightings', () => {
     });
 
     it('it should GET a sighting by id', (done) => {
-      const url = '/api/sightings/' + sightingMock.id;
+      const url = '/sighting/' + sightingMock.id;
 
       chai.request(server)
         .get(url)
@@ -60,7 +60,7 @@ describe('Sightings', () => {
   });
 
   describe('/GET sightings/find', () => {
-    const url = '/api/sightings/find';
+    const url = '/sighting/search';
 
     beforeEach((done) => {
       const loop = new Array(10);
